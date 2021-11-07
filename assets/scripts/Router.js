@@ -63,10 +63,9 @@ export class Router {
     }
     console.log(hash);
     if(!statePopped && window.location.hash != hash) {
-      history.pushState(hash, window.location.href + hash);
-      console.log(window.location.href + hash);
+      history.pushState(page, '', window.location.href + hash);
     }
-    this[page]();
+    return this[page]();
     /**
      * TODO - Part 1 - Step 4
      * Now, we are going to call the functions that we stored earlier based on 
